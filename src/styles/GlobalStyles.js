@@ -23,6 +23,7 @@ export const GlobalStyles = createGlobalStyle`
     align-items: center;
     justify-content: center;
     background-color: ${props => props.theme.backgroundApp};
-    color: ${props => props.theme.foreground};
+    color: ${props => props.theme.colorText};
+    transition: all .3s ease;
   }
 `
