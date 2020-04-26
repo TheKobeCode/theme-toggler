@@ -7,16 +7,23 @@ import { darkTheme } from './styles/themes/darkTheme'
 import { SampleComponent } from './components/SampleComponent'
 
 export const App = () => {
-  const [darkTheme, setDarkTheme] = useState(false)
+  const [theme, setTheme] = useState('light')
+  const [active, setActive] = useState(false)
 
   const toggleTheme = () => {
-    setDarkTheme(!darkTheme)
+    if (theme === 'light') {
+      setTheme('dark')
+      setActive(true)
+    } else {
+      setTheme('light')
+      setActive(false)
+    }
   }
 
   return (
-    <ThemeProvider theme={darkTheme ? darkTheme : lightTheme}>
+    <ThemeProvider theme={theme === 'light' ? lightTheme : darkTheme}>
       <GlobalStyles />
-      <SampleComponent />
+      <SampleComponent onToggle={toggleTheme} active={active} />
     </ThemeProvider>
   )
 }

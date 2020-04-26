@@ -6,11 +6,13 @@ import { SubInfo } from './styledComponents/SubInfo'
 import { Carreer } from './styledComponents/Carreer'
 import { Text } from './styledComponents/Text'
 import { Link } from './styledComponents/Link'
+import { ButtonToggle } from './styledComponents/ButtonToggle'
 
-export const SampleComponent = () => {
+export const SampleComponent = props => {
   return (
     <Container>
-      <Name>Karim Bolkovich</Name>
+      <ButtonToggle onClick={props.onToggle} active={props.active} />
+      <Name>Carlos Umanha</Name>
       <Separator />
       <SubInfo>
         <Carreer>Front End Engineer</Carreer>
@@ -23,9 +25,9 @@ export const SampleComponent = () => {
           }}
         >
           <p style={{ marginRight: 10, fontSize: 12 }}>
-            <span>👾</span>
+            <span role='img'>👾</span>
           </p>
-          <Carreer>45</Carreer>
+          <Carreer>20</Carreer>
         </div>
       </SubInfo>
       <Text>

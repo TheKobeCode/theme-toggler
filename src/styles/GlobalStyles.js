@@ -26,4 +26,6 @@ export const GlobalStyles = createGlobalStyle`
     color: ${props => props.theme.colorText};
     transition: all .3s ease;
   }
+
+  
 `
